@@ -55,6 +55,29 @@
     $("#depts").replaceChildren(...[...depts.entries()].sort((a, b) => b[1] - a[1])
       .map(([d, n]) => el("li", { text: d + " " + n + " 人" })));
 
+    // 投票名單（每人一列，取最後一次送出）
+    const sendCount = new Map();
+    rows.forEach(r => {
+      const k = String(r.dept).trim() + "|" + String(r.name).trim();
+      sendCount.set(k, (sendCount.get(k) || 0) + 1);
+    });
+    const byNo = new Map(VIDEOS.map(v => [v.key, v]));
+    const roster = people.slice().sort((a, b) => String(b.t).localeCompare(String(a.t)));
+    $("#roster").replaceChildren(...(roster.length ? roster.map(p => {
+      const k = String(p.dept).trim() + "|" + String(p.name).trim();
+      const times = sendCount.get(k) || 1;
+      const picks = (p.picks || []).map(key => byNo.get(key)).filter(Boolean)
+        .map(v => "No." + v.no + " " + v.title);
+      const nNotes = Object.keys(p.notes || {}).length;
+      return el("tr", {}, [
+        el("td", { class: "num", text: fmtTime(p.t) + (times > 1 ? "（送了 " + times + " 次）" : "") }),
+        el("td", { text: p.dept }),
+        el("td", { text: p.name }),
+        el("td", { class: "picks", text: picks.join("\n") || "—" }),
+        el("td", { class: "num", text: nNotes ? nNotes + " 則" : "—" }),
+      ]);
+    }) : [el("tr", {}, [el("td", { colspan: "5", class: "muted", text: "還沒有人投票。" })])]));
+
     // 排行
     const ranked = VIDEOS.slice().sort((a, b) => tally.get(b.key).length - tally.get(a.key).length || a.no.localeCompare(b.no));
     const top = Math.max(1, ...ranked.map(v => tally.get(v.key).length));
@@ -73,7 +96,7 @@
             el("div", { class: "track-bar" }, [el("div", { class: "fill", style: "width:" + (n / top * 100) + "%" })]),
             el("span", { class: "n", text: n + " 票・" + pct + "%" }),
           ]),
-          n ? el("div", { class: "who-list", text: voters.map(p => p.dept + " " + p.name).join("、") }) : null,
+          n ? el("div", { class: "who-list", text: "投給這支：" + voters.map(p => p.dept + " " + p.name).join("、") }) : null,
         ]),
       ]);
     }));
@@ -94,6 +117,13 @@
     notesRoot.replaceChildren(...(blocks.length ? blocks : [el("p", { class: "muted", text: "還沒有人寫修改建議。" })]));
 
     $("#updated").textContent = "更新時間 " + new Date().toLocaleTimeString("zh-TW", { hour: "2-digit", minute: "2-digit" });
+  }
+
+  function fmtTime(t) {
+    const d = new Date(t);
+    if (isNaN(d)) return String(t);
+    const p = n => String(n).padStart(2, "0");
+    return p(d.getMonth() + 1) + "/" + p(d.getDate()) + " " + p(d.getHours()) + ":" + p(d.getMinutes());
   }
 
   function stat(n, label) {

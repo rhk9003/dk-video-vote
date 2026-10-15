@@ -226,6 +226,14 @@ details summary { cursor: pointer; font-size: 14px; color: var(--brass); width: 
 .stat span { font-size: 13px; color: var(--muted); }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 0; padding: 0; list-style: none; }
 .chips li { border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; font-size: 13px; color: var(--muted); }
+.table-scroll { overflow-x: auto; margin-top: 14px; border: 1px solid var(--line); border-radius: 8px; }
+.roster { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 560px; }
+.roster th, .roster td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+.roster th { font-weight: 600; color: var(--muted); font-size: 13px; background: var(--panel); white-space: nowrap; }
+.roster tbody tr:last-child td { border-bottom: 0; }
+.roster td.num { font-variant-numeric: tabular-nums; white-space: nowrap; color: var(--muted); }
+.roster td.picks { white-space: pre-line; }
+.who-list { color: var(--ink) !important; }
 .section-title { font: 600 20px/1.4 var(--font-display); letter-spacing: .06em; margin: 40px 0 0; }
 .rank { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 14px; }
 .rank li { display: grid; grid-template-columns: 3.2em 1fr; gap: 4px 12px; align-items: baseline; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
