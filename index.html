@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>新品影片票選</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Noto+Serif+TC:wght@600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow">DK 電商部・內部票選</p>
+    <h1>新品影片票選</h1>
+    <p class="lede">一共 <span id="total-videos">17</span> 支影片，請選出最多 <span class="max-picks">3</span> 支你覺得最適合拿去放大投放廣告的影片。每支影片都可以留修改建議。</p>
+  </div>
+</header>
+
+<main>
+  <!-- 步驟一：部門／姓名 -->
+  <section id="step-who" class="wrap">
+    <form id="who-form" class="who" novalidate>
+      <h2>先填你的部門和姓名</h2>
+      <label class="field" for="dept">
+        <span>所屬部門</span>
+        <input type="text" id="dept" name="dept" autocomplete="organization-title" maxlength="40" placeholder="例：電商部" required>
+      </label>
+      <label class="field" for="name">
+        <span>姓名</span>
+        <input type="text" id="name" name="name" autocomplete="name" maxlength="40" placeholder="例：王小明" required>
+      </label>
+      <p class="form-msg" id="who-msg" role="alert"></p>
+      <div><button class="btn" type="submit">開始看影片</button></div>
+    </form>
+  </section>
+
+  <!-- 步驟二：看影片、投票 -->
+  <section id="step-vote" hidden>
+    <div class="votebar">
+      <div class="wrap">
+        <div class="voter"><span class="muted">投票人</span><strong id="voter-label"></strong><button type="button" class="linkish" id="edit-who">修改</button></div>
+        <div class="count">已選 <b id="pick-count">0</b> / <span class="max-picks">3</span></div>
+        <button type="button" class="btn" id="submit-top">送出投票</button>
+        <p class="bar-hint" id="bar-hint" role="status"></p>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <p class="howto">按影片下面的「選這支放大投放」投票，最多選 <span class="max-picks">3</span> 支，再按一次就取消。修改建議可以寫在任何一支影片下面，不一定要是你選的那支。填到一半關掉也沒關係，這台電腦會記住你填過的內容。</p>
+      <div id="groups"></div>
+
+      <section class="submit-panel" aria-labelledby="submit-title">
+        <h2 id="submit-title">確認後送出</h2>
+        <div id="summary"></div>
+        <p class="form-msg" id="submit-msg" role="alert"></p>
+        <div><button type="button" class="btn" id="submit-bottom">送出投票</button></div>
+      </section>
+    </div>
+  </section>
+
+  <!-- 步驟三：送出完成 -->
+  <section id="step-done" class="wrap" hidden>
+    <div class="done">
+      <p class="ok">已收到你的投票，謝謝！</p>
+      <h2>你這次送出的內容</h2>
+      <div id="done-summary"></div>
+      <p class="muted">想改的話可以回去修改後再送一次，我們只會算你最後一次送出的版本。</p>
+      <div class="row"><button type="button" class="btn ghost" id="back-to-vote">回去修改</button></div>
+    </div>
+  </section>
+</main>
+
+<script src="config.js"></script>
+<script src="videos.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

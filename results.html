@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>新品影片票選結果</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Noto+Serif+TC:wght@600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow">DK 電商部・內部票選</p>
+    <h1>新品影片票選結果</h1>
+    <p class="lede">同一個人送出很多次的話，只算最後一次。</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <form id="pw-form" class="who" novalidate>
+    <label class="field" for="pw">
+      <span>結果頁密碼</span>
+      <input type="password" id="pw" autocomplete="current-password" required>
+    </label>
+    <p class="form-msg" id="pw-msg" role="alert"></p>
+    <div><button class="btn" type="submit">看結果</button></div>
+  </form>
+
+  <section id="results" hidden>
+    <div class="row" style="margin-top:24px;align-items:center">
+      <button type="button" class="btn ghost" id="refresh">重新整理</button>
+      <span class="muted" id="updated"></span>
+    </div>
+    <div class="stats" id="stats"></div>
+    <ul class="chips" id="depts"></ul>
+
+    <h2 class="section-title">得票排行</h2>
+    <ol class="rank" id="rank"></ol>
+
+    <section class="notes-block">
+      <h2>修改建議（依影片）</h2>
+      <div id="notes"></div>
+    </section>
+  </section>
+</main>
+
+<script src="config.js"></script>
+<script src="videos.js"></script>
+<script src="results.js"></script>
+</body>
+</html>
