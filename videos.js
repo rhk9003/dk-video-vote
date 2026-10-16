@@ -15,6 +15,11 @@ window.GROUPS = [
     "key": "balloon",
     "title": "呼吸小氣球",
     "desc": "品牌系列，2 支都還沒發佈"
+  },
+  {
+    "key": "893114",
+    "title": "DK 89-3114 小白鞋",
+    "desc": "主題曲 MV，10/3 發佈"
   }
 ];
 
@@ -258,5 +263,18 @@ window.VIDEOS = [
     "orient": "portrait",
     "file": "呼吸小氣球_小白鞋工廠+驗收-1.mp4",
     "no": "17"
+  },
+  {
+    "key": "1110231901414125",
+    "group": "893114",
+    "status": "published",
+    "date": "10/03",
+    "length": 90,
+    "title": "好聽的放進歌單，好穿的走進日常",
+    "product": "DK 89-3114・主題曲 MV",
+    "caption": "好聽的放進歌單，好穿的走進日常。🎧\n\n簡單穿、簡單搭，\n出門不用想太複雜。\n\n從白天的輕快腳步，到晚上的城市散步，\n穿上 DK 89-3114，走出自己的節奏。\n\n打開聲音，今天就跟著這首出門。\n\n👉 到 DK 官網，找到你的日常好鞋\nhttps://www.dk-shoes.com.tw/\n\n#DK呼吸空氣鞋 #DKAIR #893114 #小白鞋穿搭 #走出自己的節奏",
+    "reel": "https://www.facebook.com/reel/1110231901414125/",
+    "orient": "portrait",
+    "no": "18"
   }
 ];
