@@ -14,7 +14,7 @@ window.GROUPS = [
   {
     "key": "balloon",
     "title": "呼吸小氣球",
-    "desc": "品牌系列，2 支都還沒發佈"
+    "desc": "品牌系列，前 2 支還沒發佈，最後 1 支 10/2 已發佈"
   },
   {
     "key": "893114",
@@ -265,6 +265,19 @@ window.VIDEOS = [
     "no": "17"
   },
   {
+    "key": "2333045837531540",
+    "group": "balloon",
+    "status": "published",
+    "date": "10/02",
+    "length": 23,
+    "title": "你的鞋子，會呼吸嗎？",
+    "product": "品牌系列・空氣鞋",
+    "caption": "你的鞋子，會呼吸嗎？🎈\n\n小氣球只是問個問題，\n怎麼連急救裝備都出動了？😂\n\n跟著這群可愛的小傢伙，\n認識 DK 會呼吸的空氣鞋，\n讓你的雙腳更輕鬆。\n\n下一雙日常好鞋，從這裡開始。\n👉 逛逛 DK 官網\nhttps://www.dk-shoes.com.tw/\n\n#DK呼吸空氣鞋 #呼吸小氣球 #你的鞋子會呼吸嗎 #日常好鞋",
+    "reel": "https://www.facebook.com/reel/2333045837531540/",
+    "orient": "portrait",
+    "no": "18"
+  },
+  {
     "key": "1110231901414125",
     "group": "893114",
     "status": "published",
@@ -275,6 +288,6 @@ window.VIDEOS = [
     "caption": "好聽的放進歌單，好穿的走進日常。🎧\n\n簡單穿、簡單搭，\n出門不用想太複雜。\n\n從白天的輕快腳步，到晚上的城市散步，\n穿上 DK 89-3114，走出自己的節奏。\n\n打開聲音，今天就跟著這首出門。\n\n👉 到 DK 官網，找到你的日常好鞋\nhttps://www.dk-shoes.com.tw/\n\n#DK呼吸空氣鞋 #DKAIR #893114 #小白鞋穿搭 #走出自己的節奏",
     "reel": "https://www.facebook.com/reel/1110231901414125/",
     "orient": "portrait",
-    "no": "18"
+    "no": "19"
   }
 ];
